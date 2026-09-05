@@ -109,3 +109,7 @@ paid tiers are on [/pricing](https://parlay-api.com/pricing).
 - [parlayapi-notebooks](https://github.com/JacobiusMakes/parlayapi-notebooks): worked notebooks on no-vig, EV, line movement, CLV, parlay pricing
 
 MIT licensed. Built by the ParlayAPI team.
+
+---
+
+Part of the [ParlayAPI](https://parlay-api.com) ecosystem: a real-time sports odds API with a free tier of 1,000 credits per month, no card required. Explore all the tools at [github.com/JacobiusMakes](https://github.com/JacobiusMakes).
