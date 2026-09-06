@@ -136,6 +136,17 @@ class PrivacyTests(unittest.TestCase):
                 self.assertNotIn(CANARY, output.getvalue())
                 self.assertEqual(factory.return_value.open.call_count, 1)
 
+    def test_optional_notebook_install_uses_same_exact_commit_pin(self):
+        requirement = (ROOT / 'requirements.txt').read_text().strip()
+        self.assertRegex(requirement, r'^parlayapi-agent-tools @ git\+https://github\.com/JacobiusMakes/parlayapi-agent-tools@[0-9a-f]{40}$')
+        notebook = json.loads((ROOT / 'starter.ipynb').read_text())
+        namespace = {'MODE': 'demo'}
+        with patch.object(subprocess, 'run') as install:
+            exec(compile(''.join(notebook['cells'][2]['source']), '<install-cell>', 'exec'), namespace)
+        install.assert_called_once()
+        self.assertEqual(install.call_args.args[0][-1], requirement)
+        self.assertTrue(install.call_args.kwargs['check'])
+
     def test_codespaces_has_no_attach_or_start_execution(self):
         config = json.loads((ROOT / '.devcontainer/devcontainer.json').read_text())
         self.assertNotIn('postAttachCommand', config)

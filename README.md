@@ -78,7 +78,8 @@ The default returns the same consensus probabilities. `FAIR` is that calculated
 baseline; `EDGE` compares the selected model probability with the chosen price's
 implied probability. These existing methods have not been changed by the privacy
 repair and do not establish freshness, execution availability, or model accuracy.
-The typed event models come from
+The dependency and optional Colab install are pinned to the same reviewed public
+commit (`8d0630fc1113434ba61ec14695ed42ed96c4396e`). The typed event models come from
 [parlayapi-agent-tools](https://github.com/JacobiusMakes/parlayapi-agent-tools).
 
 ## Sharing and license

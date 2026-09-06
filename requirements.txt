@@ -1,1 +1,1 @@
-parlayapi-agent-tools @ git+https://github.com/JacobiusMakes/parlayapi-agent-tools
+parlayapi-agent-tools @ git+https://github.com/JacobiusMakes/parlayapi-agent-tools@8d0630fc1113434ba61ec14695ed42ed96c4396e
